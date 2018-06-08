@@ -43,6 +43,8 @@ public abstract class BaseListActivity<A extends BaseListAdapter, D> extends App
 
     protected abstract int getDivideHeight();
 
+    protected abstract int getContentView();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +60,7 @@ public abstract class BaseListActivity<A extends BaseListAdapter, D> extends App
     }
 
     protected void initView() {
+        setContentView(getContentView());
         mSwipeRefreshLayout = getSwipeRefreshLayout();
         mRecyclerView = getRecyclerView();
     }
